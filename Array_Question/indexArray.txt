@@ -85,3 +85,18 @@ S.No.   Name_of_question                                  leetcode  no.         
        Reverse pairs                                   493                   ReversePairs                       72 "                           https://leetcode.com/problems/reverse-pairs/description/?envType=problem-list-v2&envId=array
 60.    Subarray with maximum product                                         MaxiProductSubarray                73"                            https://www.naukri.com/code360/problems/subarray-with-maximum-product_6890008
        Subarray with maximum product                   152                   maxiproductsubarray2               73"                            https://leetcode.com/problems/maximum-product-subarray/description/?envType=problem-list-v2&envId=array 
+61.    first missing and repeating number                                    firstmissingAndRepeat             100                             https://www.naukri.com/code360/problems/missing-and-repeating-numbers_6828164?leftPanelTabValue=SUBMISSION
+62.    First positive number missing                   41                    firstPositiveMissing              100                             https://leetcode.com/problems/first-missing-positive/description/
+63.    
+64.
+65.
+66.
+67.
+68.
+69.
+70.
+71.
+72.
+73.
+74.
+75.
