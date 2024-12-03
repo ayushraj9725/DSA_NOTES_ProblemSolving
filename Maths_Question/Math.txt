@@ -1,0 +1,34 @@
+In this maths_question folder we are making notes on Only maths maths_question
+and here we are going to formating or Indexding the question 
+
+for basic revision we can go on my copy notes for maths topic and code ninja or leetcode 
+of we can go basicjava and functionjava folder which present in JAVAPROGRAM folder  in C / Destop 
+we are saving the the link of what question  we solved .
+
+- > this is my codeninja profile link -( https://www.naukri.com/code360/profile/ayushhraj  ) which registerd on ayushraj23032005@gmail.com and password - @ayush1225
+- > this is my leetcode profile link - (https://leetcode.com/u/ayushraj1225/) registed on same email and password .
+
+let's indexing  (codeNinja / code360)  naukri.com
+no.     Name .....                 filename         Link......
+
+1.  Find Area of Rectangle ->      maths1           https://www.naukri.com/code360/problems/find-area-of-rectangle_1112574?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED
+2.  Reverse of a number ->         maths2           https://www.naukri.com/code360/problems/reverse-of-a-number_624652?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+3.  Sum or Product                 maths3           https://www.naukri.com/code360/problems/sum-or-product_920478?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+4.  Print all Divisors of a number     maths4       https://www.naukri.com/code360/problems/print-all-divisors-of-a-number_1164188?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+5.  Sum Of Two Arrays              maths5           https://www.naukri.com/code360/problems/sum-of-two-arrays_893186?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+6.  Sum of even & odd              maths6           https://www.naukri.com/code360/problems/sum-of-even-odd_624650?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+7.  N-th Term Of GP                maths7           https://www.naukri.com/code360/problems/nth-term-of-gp_797999?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+8.  Sum Of Even Numbers Till N     maths8           https://www.naukri.com/code360/problems/sum-of-even-numbers-till-n_893205?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+9.  Sum of Arrays( Print array Sum)    maths9       https://www.naukri.com/code360/problems/print-array-sum_625032?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+10.  Count Of Divisible Pairs      maths10          https://www.naukri.com/code360/problems/sum-of-numbers_975486?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+11.  All prime numbers             maths11          https://www.naukri.com/code360/problems/all-prime-numbers_624970?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+12.  Count Primes                  maths12          https://www.naukri.com/code360/problems/prime-factorisation_1760849?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=COMPLETED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+13.  N-th Fibonacci Number         maths13          https://www.naukri.com/code360/problems/nth-fibonacci-number_1115780?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=ATTEMPTED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav  
+14.  Number And Digits             maths14          https://www.naukri.com/code360/problems/number-and-digits_975269?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=ATTEMPTED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+15.  Factorial of a Number         maths15          https://www.naukri.com/code360/problems/factorial_975273?interviewProblemRedirection=true&practice_topic%5B%5D=Math&attempt_status=ATTEMPTED&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav
+  NUMBER THEORY 
+16.  n th term of GP               maths7  
+17.  Find power of a number        maths17          https://www.naukri.com/code360/problems/find-power-of-a-number_1115717?interviewProblemRedirection=true&practice_topic%5B%5D=Arrays&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=ATTEMPTED
+18.  Power of Two                  maths18          https://www.naukri.com/code360/problems/power-of-two_893061?interviewProblemRedirection=true&practice_topic%5B%5D=Arrays&count=25&page=1&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=ATTEMPTED
+19.
+20.  

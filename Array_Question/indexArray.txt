@@ -1,0 +1,87 @@
+we are indexing or formating here on the Array data structure , and how i made the notes and where , what we code that things 
+i going to discuss here ,
+the linkedin post 33/100 to of 1st 100day coding challenges array problem and there solution we discussed 
+also we have discuss in code during the comment line 
+note if any things not become in mind after seeing then dry run that particular problem by reading again and again problems 
+take some help by chat gpt. 
+
+for basic revision we can go on my copy notes for arrays topic and code ninja or leetcode 
+of we can go basicjava and arrayjava folder which present in JAVAPROGRAM folder  in C / Destop 
+we are saving the the link of what question  we solved .
+
+- > this is my codeninja profile link -( https://www.naukri.com/code360/profile/ayushhraj  ) which registerd on ayushraj23032005@gmail.com and password - @ayush1225
+- > this is my leetcode profile link - (https://leetcode.com/u/ayushraj1225/) registed on same email and password .
+also we uploaded on my  github  profile 
+
+let' index the solved problem On codeninja and leetcode 
+
+S.No.   Name_of_question                                  leetcode  no.            FilesName                  linkeinpostNo                   Links
+1.     Check Sorted Array                                                    checkSortArray                     34                            https://www.naukri.com/code360/problems/ninja-and-the-sorted-check_6581957
+2.     Remove Duplicates from Sorted Array                26                 removeDuplicatefromSortedA         34                            https://www.naukri.com/code360/problems/remove-duplicates-from-sorted-array_1102307?leftPanelTabValue=PROBLEM                                         
+3.     Remove Element                                     27                 removeElement                      34                            https://leetcode.com/problems/remove-element/?envType=problem-list-v2&envId=array
+4.     Left rotate array by one place                                        LeftRotateByOne                    35                            https://www.naukri.com/code360/problems/left-rotate-an-array-by-one_5026278?leftPanelTabValue=SUBMISSION
+5.     Left rotate array by K places                                         LeftRotateByK                      35                            https://www.naukri.com/code360/problems/rotate-array_1230543?leftPanelTabValue=SUBMISSION
+6.     Fight rotate array by K places                    189                 LeftRotateByK2                     35                            htt ps://leetcode.com/problems/rotate-array/?envType=problem-list-v2&envId=array
+7.     Move Zero's to End                                                    movedZeros                         36                            https://www.naukri.com/code360/problems/ninja-and-the-zero-s_6581958?leftPanelTabValue=SUBMISSION
+       moved Zero's to end                               283                 movedzeros2                        36                            https://leetcode.com/problems/move-zeroes/?envType=problem-list-v2&envId=array
+8.     Single Number                                     136                 singleNumber1                      36                            https://leetcode.com/problems/single-number/?envType=problem-list-v2&envId=array
+9.     Union of Two sorted Array                                             unionTwoSorted                     37                            https://www.naukri.com/code360/problems/sorted-array_6613259?leftPanelTabValue=PROBLEM
+10.    Merge two sored array                              88                 mergeTWoArray                      37                            https://leetcode.com/problems/merge-sorted-array/?envType=problem-list-v2&envId=array
+11.    Contains Duplicate                                217                 ContainsDuplicate                  37                            https://leetcode.com/problems/contains-duplicate/?envType=problem-list-v2&envId=array
+12.    Find all disappearing number in array             448                 FindDisappearingNo                 38                            https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/?envType=problem-list-v2&envId=array
+13.    Intersection Of two Sorted Array                                      IntersectionOfTwoSoredarr          39                            https://www.naukri.com/code360/problems/intersection-of-2-arrays_1082149?leftPanelTabValue=SUBMISSION
+14.    Intersection of two array                         349                 IntersectionOfTwoArr               39                            https://leetcode.com/problems/intersection-of-two-arrays/?envType=problem-list-v2&envId=array
+15.    Missing Number                                                        MissingNumber1                     40                            https://www.naukri.com/code360/problems/missing-number_6680467?leftPanelTabValue=SUBMISSION
+16.    Missing Number                                    268                 MissingNumber2                     40                            https://leetcode.com/problems/missing-number/submissions/1399903518/?envType=problem-list-v2&envId=array
+17.    Maximum consecutive one's                                             MaximumConsecutive                 41                            https://www.naukri.com/code360/problems/maximum-consecutive-ones_3843993?leftPanelTabValue=PROBLEM
+       Max consecutive on's                              485                 MaxConSecutive                     41                            https://leetcode.com/problems/max-consecutive-ones/description/?envType=problem-list-v2&envId=array
+18.    find single element once occurrence                                   findSingleOccur                    41                            https://www.naukri.com/code360/problems/find-the-single-element_6680465?leftPanelTabValue=PROBLEM
+19.    longest subarray with sum K                                           LongestSubArryMaxBrute             42                            https://www.naukri.com/code360/problems/longest-subarray-with-sum-k_6682399?leftPanelTabValue=PROBLEM
+20.    longest subarray with sum K (only for +ve )                           LongestSubarrayOptimal             43                            above link just that is ......
+21.    longest subarray with sum K (hvaing +ve and -ve) element              LongestSubarrayOptimalCaseve       43                            https://www.naukri.com/code360/problems/longest-subarray-with-sum-k_5713505?leftPanelTabValue=SUBMISSION
+22.    Two Sum Problem                                                       TwoSumType1                        44                            https://www.naukri.com/code360/problems/reading_6845742?leftPanelTabValue=SUBMISSION
+23.    Two Sum Problem type 2                       leetcode 1               TwoSumType2                        44                            https://leetcode.com/problems/two-sum/description/?envType=problem-list-v2&envId=array
+24.    Sort Color                                        75                  SortColor                          45                            https://leetcode.com/problems/sort-colors/?envType=problem-list-v2&envId=array
+25.    SortZeroOneTwos(Dutch Nation Flag algo DNF)                           SortZeroOneTwos                    45                            https://www.naukri.com/code360/problems/sort-an-array-of-0s-1s-and-2s_892977?leftPanelTabValue=PROBLEM
+26.    Majority Element                                                      MajorityElement                    46                            https://www.naukri.com/code360/problems/majority-element_6783241?leftPanelTabValue=SUBMISSION
+       Majority Element(moore's voting algo)            169                  MajorityElement1                   46                            https://leetcode.com/problems/majority-element/submissions/1406344708/?envType=problem-list-v2&envId=array
+27.    MaximumSubArray                                                       MaximumSubarray1                   47                            https://www.naukri.com/code360/problems/maximum-subarray-sum_630526?leftPanelTabValue=SUBMISSION
+28.    MaximumSubArray(kadan's algo)                     53                  Maximumsubarray2                   47                            https://leetcode.com/problems/maximum-subarray/submissions/1407399067/?envType=problem-list-v2&envId=array
+29.    Best time to buy and sell the stock              121                  BestTimeToSell1                    48                            https://www.naukri.com/code360/problems/stocks-are-profitable_893405?source=youtube&campaign=striver_dp_videos&leftPanelTabValue=SUBMISSION
+       Best time to bus and sell                        121                     same file                       48                            https://leetcode.com/problems/best-time-to-buy-and-sell-stock/submissions/1408524458/?envType=problem-list-v2&envId=array   
+30.    Rearrange the array by sign                      2149                 rearrangeArry1                     49                            https://leetcode.com/problems/rearrange-array-elements-by-sign/?envType=problem-list-v2&envId=array
+       rearrange array type 2                                                rearrangeArray                     49                            https://www.naukri.com/code360/problems/alternate-numbers_6783445?leftPanelTab=0
+31.    Search insert Position                           35                   SearchInsertPosition               50                            https://leetcode.com/problems/search-insert-position/?envType=problem-list-v2&envId=array 
+32.    Next Permutation                                 33                   NextPermutation1                   51                            https://leetcode.com/problems/next-permutation/description/?envType=problem-list-v2&envId=array
+       Next Permutation 1                                                    NextPermutation2                   51                            https://www.naukri.com/code360/problems/next-greater-permutation_6929564?leftPanelTabValue=SUBMISSION
+33.    Find Minimum in Rotated Sorted Array             153                  RotatedSortedArray1                51                            https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/?envType=problem-list-v2&envId=array
+34.    Leaders(superior) in array                                            LeaderINArray                      52                            https://www.naukri.com/code360/problems/superior-elements_6783446?leftPanelTabValue=SUBMISSION      
+35.    Replace Elements with Greatest Element on Right Side 1299             LeadersInarray2                    52                            https://leetcode.com/problems/replace-elements-with-greatest-element-on-right-side/description/?envType=problem-list-v2&envId=array
+36.    Longest consecutive subsequence                                       LongestSequence                    53                            https://www.naukri.com/code360/problems/longest-successive-elements_6811740?leftPanelTabValue=SUBMISSION
+37.    learn concept about 2D array                                          see in Prgramjava file in c       54-55                                                                 
+38.    set matrix zeros                                 73                   SetMatrixZeros                    56-57                          https://leetcode.com/problems/set-matrix-zeroes/submissions/1418297186/?envType=problem-list-v2&envId=array   and    https://www.naukri.com/code360/problems/zero-matrix_1171153
+39.    rotate the matrix by 90 degrees                                       RotateMatrix                       58                            https://www.naukri.com/code360/problems/rotate-the-matrix_6825090?leftPanelTabValue=SUBMISSION
+40.    rotate the image by 90 degrees clock wise        48                   RotateImage                        58                            https://leetcode.com/problems/rotate-image/?envType=problem-list-v2&envId=array
+41.    Spiral Matrix                                                         SpiralMatrix1                      59                            https://www.naukri.com/code360/problems/spiral-matrix_6922069?leftPanelTabValue=SUBMISSION
+42.    Spiral Matrix 2                                  54                   SpiralMatrix2                      59                            https://leetcode.com/problems/spiral-matrix/?envType=problem-list-v2&envId=array
+43.    Count subArray equal to sum k                                         Count_subarray_sum                 60                            https://www.naukri.com/code360/problems/subarray-sums-i_1467103?leftPanelTabValue=SUBMISSION
+44.    Count subarray equal to sum k                    560                  Count_subarray_sum1                60                            https://leetcode.com/problems/subarray-sum-equals-k/?envType=problem-list-v2&envId=array
+45.    Pascal Triangle type 2                           119                  PascalTriangle2                    61                            https://leetcode.com/problems/pascals-triangle-ii/description/?envType=problem-list-v2&envId=array                                 
+46.    Pascal Triangle type 3                           118                  PascalTriangle3                    61                            https://leetcode.com/problems/pascals-triangle/?envType=problem-list-v2&envId=array
+47.    Majority Element 2                               229                  MajorityElement2                   62                            https://leetcode.com/problems/majority-element-ii/submissions/1424366358/?envType=problem-list-v2&envId=array
+48.    Three Sum                                        15                   ThreeSum                           63                            https://leetcode.com/problems/3sum/?envType=problem-list-v2&envId=array         
+49.    FourSum                                          18                   FourSum                            64                            https://leetcode.com/problems/4sum/?envType=problem-list-v2&envId=array
+50.    Numbers of Subarray with xor equal to k sum  (avobe 560 same)         Count_subarray_sumkXOR             65                            https://www.naukri.com/code360/problems/subarrays-with-xor-k_6826258?leftPanelTabValue=PROBLEM
+51.    Two Sum 2                                       167                   TwoSum2                            66                            https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
+52.    Merge Intervals                                  56                   MergeIntervals                     67                            https://www.naukri.com/code360/problems/merge-all-overlapping-intervals_6783452?leftPanelTabValue=SUBMISSION
+53.    Monotonic array                                 896                   MonotonicArray                     68                            https://leetcode.com/problems/monotonic-array/submissions/1429506640/?envType=problem-list-v2&envId=array
+54.    Merge two sorted Array without extra space                            MergeSortedArrays2                 69 (not posted)               https://www.naukri.com/code360/problems/merge-two-sorted-arrays-without-extra-space_6898839?leftPanelTabValue=SUBMISSION              
+55.    Find missing repeatin element                                         missingRepeatingEle                70  "                         https://www.naukri.com/code360/problems/missing-and-repeating-numbers_6828164
+56.    Missing element 
+57.    Repeating element (duplicate element )                              
+58.    Count intervals in array                                              CountIntervals                     71 "                           https://www.naukri.com/code360/problems/number-of-inversions_6840276
+       Count intervals in array                       2276                   CountIntervals2                    71 "                                                
+59.    Reverse pairs                                                         Reversepairs                       72  "                          https://www.naukri.com/code360/problems/team-contest_6840309
+       Reverse pairs                                   493                   ReversePairs                       72 "                           https://leetcode.com/problems/reverse-pairs/description/?envType=problem-list-v2&envId=array
+60.    Subarray with maximum product                                         MaxiProductSubarray                73"                            https://www.naukri.com/code360/problems/subarray-with-maximum-product_6890008
+       Subarray with maximum product                   152                   maxiproductsubarray2               73"                            https://leetcode.com/problems/maximum-product-subarray/description/?envType=problem-list-v2&envId=array 

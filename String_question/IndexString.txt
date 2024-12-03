@@ -1,0 +1,53 @@
+we are indexing or formating here on the string data structure , and how i made the notes and where , what we code that things 
+i going to discuss here ,
+the linkedin post 15/100 to 32/100 of 1st 100day coding challenges string problem and there solution we discussed 
+also we have discuss in code during the comment line 
+note if any things not become in mind after seeing then dry run that particular problem by reading again and again problems 
+take some help by chat gpt. 
+
+for basic revision we can go on my copy notes for maths topic and code ninja or leetcode 
+of we can go basicjava and functionjava folder which present in JAVAPROGRAM folder  in C / Destop 
+we are saving the the link of what question  we solved .
+
+- > this is my codeninja profile link -( https://www.naukri.com/code360/profile/ayushhraj  ) which registerd on ayushraj23032005@gmail.com and password - @ayush1225
+- > this is my leetcode profile link - (https://leetcode.com/u/ayushraj1225/) registed on same email and password .
+also we uploaded on my  github  profile 
+
+let's indexing  (codeNinja / code360)  naukri.com
+S.no.     Name .....                          filename         Link......
+1.   Beautiful String                         String1          https://www.naukri.com/code360/problems/beautiful-string_1115625?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=NOT_ATTEMPTED
+2.   Check If The String Is A Palindrome      String2          https://www.naukri.com/code360/problems/check-if-the-string-is-a-palindrome_1062633?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=COMPLETED
+3.   Reverse the String                       String3          https://www.naukri.com/code360/problems/reverse-the-string_799927?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=COMPLETED
+4.   String Reverse                           String4          https://www.naukri.com/code360/problems/string-reverse_3210207?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=COMPLETED
+5.   Remove Vowels                            String5          https://www.naukri.com/code360/problems/remove-vowels_839735?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=COMPLETED
+6.   First Unique Character in a String       String6          https://www.naukri.com/code360/problems/first-unique-character-in-a-string_983606?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=COMPLETED
+7.   Convert String                           String7          https://www.naukri.com/code360/problems/convert-string_1062635?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=COMPLETED
+8.   Isomorphic String                        String8          https://www.naukri.com/code360/problems/check-if-two-given-strings-are-isomorphic-to-each-other_1117636?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=COMPLETED
+9.   Replace Spaces                           String9          https://www.naukri.com/code360/problems/replace-spaces_1172172?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=COMPLETED
+10.  Reverse Words In A String                String10         https://www.naukri.com/code360/problems/reverse-words_696444?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=COMPLETED
+11.  Reverse String Word Wise                 String11         https://www.naukri.com/code360/problems/reverse-string-word-wise_1262348?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=COMPLETED
+12.  Split String                             String12         https://www.naukri.com/code360/problems/split-string_3744737?interviewProblemRedirection=true&page=1&practice_topic%5B%5D=Strings&count=25&search=&sort_entity=order&sort_order=ASC&leftPanelTabValue=PROBLEM&customSource=studio_nav&attempt_status=COMPLETED
+
+indexing (leetcode ) leedcode Question no   
+13.  Roman to Integer(13)                     String13         https://leetcode.com/problems/roman-to-integer/description/?envType=problem-list-v2&envId=string
+14.  Find the Index of the First Occurrence in a String(28)    String14      https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/?envType=problem-list-v2&envId=string
+15.  Length of Last Word (58)                 String15         https://leetcode.com/problems/length-of-last-word/description/?envType=problem-list-v2&envId=string
+16.  Valid Palindrome (125)                   String16         https://leetcode.com/problems/valid-palindrome/description/?envType=problem-list-v2&envId=string
+17.  Reverse Words in a String(151)           String17         https://leetcode.com/problems/reverse-words-in-a-string/description/?envType=problem-list-v2&envId=string
+18.  Isomorphic Strings(205)                  String18         https://leetcode.com/problems/isomorphic-strings/?envType=problem-list-v2&envId=string
+19.  Valid Anagram(242)                       String19         https://leetcode.com/problems/valid-anagram/description/?envType=problem-list-v2&envId=string
+20.  Reverse String(344)                      string20         https://leetcode.com/problems/reverse-string/description/?envType=problem-list-v2&envId=string
+21.  Reverse Vowels of a String(345)          String21         https://leetcode.com/problems/reverse-vowels-of-a-string/?envType=problem-list-v2&envId=string
+22.  First Unique Character in a String(387)  String22         https://leetcode.com/problems/first-unique-character-in-a-string/description/?envType=problem-list-v2&envId=string
+23.  Find the Difference(389)                 String23         https://leetcode.com/problems/find-the-difference/description/?envType=problem-list-v2&envId=string
+24.  Add string (415)                         AddString        https://leetcode.com/problems/add-strings/?envType=problem-list-v2&envId=string                       
+25.  String compression(443)             StringCompression          https://leetcode.com/problems/string-compression/?envType=problem-list-v2&envId=string
+26.  Repeated substring (459)            RepeatSubstring            https://leetcode.com/problems/repeated-substring-pattern/?envType=problem-list-v2&envId=string
+27.  Licence Key formating(482)            icenceFormating          https://leetcode.com/problems/license-key-formatting/description/?envType=problem-list-v2&envId=string
+28.  Revese Only Letter (917)              ReverseOnlyLetter        https://leetcode.com/problems/reverse-only-letters/description/?envType=problem-list-v2&envId=string
+
+29. 1455. Check If a Word Occurs As a
+    Prefix of Any Word in a Sentence(1455)   checkPrefix            https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/description/?envType=problem-list-v2&envId=string
+
+
+30.
