@@ -52,7 +52,7 @@ indexing (leetcode ) leedcode Question no
 
 30. Adding space to a string                 AddingSpace           https://leetcode.com/problems/adding-spaces-to-a-string/?envType=daily-question&envId=2024-12-03
 31. check any prefix occure in sentence      checkPrefix           https://leetcode.com/problems/check-if-a-word-occurs-as-a-prefix-of-any-word-in-a-sentence/?envType=daily-question&envId=2024-12-02
-32. 
+32. 392. Is Subsequence                     iSubcequence           https://leetcode.com/problems/is-subsequence/description/
 33.
 34.
 35.
