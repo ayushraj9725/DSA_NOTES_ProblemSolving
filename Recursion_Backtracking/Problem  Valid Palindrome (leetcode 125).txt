@@ -1,0 +1,163 @@
+Problem : Valid Palindrome (leetcode 125 )
+
+Problem Link : https://leetcode.com/problems/valid-palindrome/
+
+Problem Statement : 
+A phrase is a palindrome if, after converting all uppercase letters into lowercase letters and removing all non-alphanumeric characters, it reads the same forward and backward. Alphanumeric characters include letters and numbers.
+
+Given a string s, return true if it is a palindrome, or false otherwise.
+
+ 
+
+Example 1:
+
+Input: s = "A man, a plan, a canal: Panama"
+Output: true
+Explanation: "amanaplanacanalpanama" is a palindrome.
+
+Example 2:
+
+Input: s = "race a car"
+Output: false
+Explanation: "raceacar" is not a palindrome.
+Example 3:
+
+Input: s = " "
+Output: true
+Explanation: s is an empty string "" after removing non-alphanumeric characters.
+Since an empty string reads the same forward and backward, it is a palindrome.
+ 
+
+Constraints:
+
+1 <= s.length <= 2 * 105
+s consists only of printable ASCII characters.
+
+/******************************************************* C++ CODE RECURSIVE *********************************************************/
+
+class Solution {                                                                  TIME COMP : O(N)   and SPACE : O(N)  bcz WE are using STACK
+public:
+    void check(int i , int j ,bool& flag , string s){
+        
+        // base condition 
+        if(i >= j) return ;
+ 
+        while(i < j && !isalnum(s[i])) i++ ; // dont care simple move i
+        while(i < j && !isalnum(s[j])) j-- ; // don't care simple move j
+        if(tolower(s[i]) != tolower(s[j])){
+            flag = false ;
+            return ; // immediate return if not match 
+        }
+        check(i+1,j-1,flag,s); // check 1st and calling for next
+        
+    }
+    bool isPalindrome(string s) {
+       
+       // Recursive approach : O(N) time and O(N) space 
+       int n = s.size() ;
+       int i = 0 ;
+       int j = n - 1 ;
+       bool flag = true  ;
+       check(i,j,flag,s) ;// we are passing here flag primitive by value it my lost the value after recursive call , and we could not get actuall result ! instead of this working with copy we need to work with the actuall thing 1 so we have to pass the flag by referance here in c++ 
+        // if flag has not made false after recursive call it already true 
+       return flag ;
+
+    /* Note : 
+      in java we cant pass primitive like c++ here bool then there we have to work with the wrapper class boolean array with one value true or false at 0th index we make it similar to this working 
+    Other way we write the java code using reursive call check it out on java code editor using returning the value 
+     
+    */
+
+/******************************************************C++ CODE SIMPLE USING LOOP ***************************************************/
+class Solution {
+   bool isPalindrome(string s) {                                                    TIME COMP : O(N)   and SPACE : O(1)
+ 
+// simple approach : O(N) time approx in worth case 
+        int n = s.size();
+        int i = 0 ;
+        int j = n - 1 ;
+        while(i < j){
+           // ignore all character except letter or digit 
+           while(i < j && !isalnum(s[i])) i++ ; // dont care simple move i
+           while(i < j && !isalnum(s[j])) j-- ; // don't care simple move j
+
+           // check where both are not same return false 
+           if(tolower(s[i]) != tolower(s[j])){
+            return false ;
+           }
+           i++ ;
+           j-- ;
+        }
+
+        return true ; // if not return  false that means string is palindrome so retun now true 
+
+        */
+
+    }
+};
+
+/******************************************************* JAVA CODE RECURSIVE ********************************************************/
+class Solution {
+    public boolean check(int i , int j , String s){
+                                                                            TIME COMP : O(N)   and SPACE : O(N)  bcz WE are using STACK                                                                                    
+
+       // here the base condition
+        if( i >= j) return true ; // if not return false still then we should rreturn true now 
+        
+        //  ignote the unwanted character 
+        while(i < j && !Character.isLetterOrDigit(s.charAt(i))){
+            i++ ;
+        }
+        while(i < j && !Character.isLetterOrDigit(s.charAt(j))){
+            j-- ;
+        }
+        // no check the condition if fund any mis match char immediate returnn false 
+        if(Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))){
+                return false ;
+        }
+        // other wise we call recursivly here 
+        return check(i+1 , j-1 , s);
+    }
+    public boolean isPalindrome(String s) {
+        int i = 0 ;
+        int j = s.length() - 1 ;
+        
+        return check(i,j,s) ;
+        
+     }
+} 
+       
+
+
+
+/********************************************************** SIMPLE APPROACH USING LOOP *************************************************/
+class Solution {                                                                       
+                                                                                    TIME COMP : O(N)   and SPACE : O(1)
+ public boolean isPalindrome(String s) {
+
+        int i = 0 ;
+        int j = s.length() - 1 ;
+
+       while(i < j){
+            while(i < j && !Character.isLetterOrDigit(s.charAt(i))){
+                i++ ;
+            }
+            while(i < j && !Character.isLetterOrDigit(s.charAt(j))){
+                j-- ;
+            }
+
+            if(Character.toLowerCase(s.charAt(i)) != Character.toLowerCase(s.charAt(j))){
+                 return false ;
+            }
+            i++ ;
+            j-- ;
+        }
+
+        return true ;
+
+       
+
+    }
+}
+
+/***************************************************************************************************************************************/

@@ -1,0 +1,76 @@
+Problem : Factorials Less than or Equal to n
+
+Problem Link : https://www.geeksforgeeks.org/problems/find-all-factorial-numbers-less-than-or-equal-to-n3548/0?problemType=functional&difficulty%255B%255D=-1&page=1&query=problemTypefunctionaldifficulty%255B%255D-1page1
+
+Problem Statement : 
+A number n is called a factorial number if it is the factorial of a positive integer. For example, the first few factorial numbers are 1, 2, 6, 24, 120,
+Given a number n, the task is to return the list/vector of the factorial numbers smaller than or equal to n.
+
+Examples:
+
+Input: n = 3
+Output: 1 2
+Explanation: The first factorial number is 1 which is less than equal to n. The second number is 2 which is less than equal to n,but the third factorial number is 6 which is greater than n. So we print only 1 and 2.
+
+Input: n = 6
+Output: 1 2 6
+Explanation: The first three factorial numbers are less than equal to n but the fourth factorial number 24 is greater than n. So we print only first three factorial numbers.
+
+Constraints:
+1<=n<=1018
+
+/***************************************************** CPP CODE RECURSIVE ***************************************************************/
+ TIMEC COMPLEXITY :   O(N) TIME                  
+ SPACE COMPLEXITY :   O(N) Because recursion using extra space in stack internally in memory 
+
+class Solution {
+  public:
+    void factfun(long long n , long long num , long long fact , vector<long long > &ans){
+        
+         
+         if(fact > n){ // base case when we get the greater than n fact just return 
+             return ;
+         }
+         //  num++ ;  // we can upate here also
+         ans.push_back(fact) ;
+         num++ ;
+         factfun(n,num,fact * num, ans) ;
+         
+    }
+    vector<long long> factorialNumbers(long long n) {
+
+         vector<long long> ans ;
+        int num = 1 ;
+        int fact = 1 ;
+        factfun(n,num,fact ,ans) ;
+        
+        return ans  ;
+        
+    }
+};
+
+
+/**************************************************************** SIMPLE APPROACH ******************************************************/
+class Solution {
+  public: 
+        vector<long long> factorialNumbers(long long n) {                     // TIME COMPLEXITY : O(N) space : O(1)
+         
+        
+        // Write Your Code here
+        // we are writing the simple approach using loop 
+
+        int k = (n/2)+1 ;
+        vector<long long> ans ;
+        long long fact = 1 ;
+        for(int i = 2 ; i <= k ; i++){
+            fact = fact * i ;
+            if(fact <= n){
+                ans.push_back(fact);
+            }
+        }
+        return ans ;
+        */
+  }
+};
+
+/**************************************************************************************************************************************/
