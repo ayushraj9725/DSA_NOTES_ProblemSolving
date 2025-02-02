@@ -1,0 +1,106 @@
+problem : Find all possible palindromic partitions of a String (leetcode 131) 
+
+Problem link : https://www.geeksforgeeks.org/problems/find-all-possible-palindromic-partitions-of-a-string/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card
+
+Problem statement : 
+Given a String S, Find all possible Palindromic partitions of the given String.
+ 
+
+Example 1:
+
+Input:
+S = "geeks"
+Output:
+g e e k s
+g ee k s
+Explanation:
+All possible palindromic partitions
+are printed.
+Example 2:
+
+Input:
+S = "madam"
+Output:
+m a d a m
+m ada m
+madam
+
+Your Task:
+You don't need to read input or print anything. Your task is to complete the function allPalindromicPerms() which takes a String S as input parameter and returns a list of lists denoting all the possible palindromic partitions in the order of their appearance in the original string.
+
+ 
+
+Expected Time Complexity: O(N*2N)
+Expected Auxiliary Space: O(N2), where N is the length of the String
+
+ 
+
+Constraints:
+1 <= |S| <= 20
+
+Company Tags
+Amazon Microsoft Facebook  
+
+
+/***************************************************** CODE CPP SOLUTION *************************************************************/
+
+class Solution {
+ 
+    bool isPalindrome(string& s){
+        int n = s.size();
+       
+        int i = 0 , j = n - 1 ;
+        while(i < j){
+            if(s[i] != s[j]){
+                return false ;
+            }
+            i++ ;
+            j-- ;
+        }
+        return true ;
+        
+    }
+ 
+    void solve(string& S , vector<vector<string>>& ans, vector<string>& temp,int index){
+         // base case 
+         // when we get the temp string is palinrome and equal to the size  of the S string 
+         if(index == S.size()){
+             ans.push_back(temp);
+             // and simple return from here 
+             return ;
+         }
+         
+         // recursive case / updating checking and calling
+         string s = ""; // it is taking when we iterate the given S string index that char considiring we as a string so that we storing here for check ing the palindrome nature 
+         for(int i = index ; i < S.size() ; i++){
+             // S[i] is making previous any being string in all scenario we want to check string palindrome we we make s string with all that char present in the given string
+             s.push_back(S[i]) ;
+             // checking the make string is palindrome or not if it is palindrom then we consider and store it in temp
+         
+             if(isPalindrome(s)){
+                 // yes then we add that string into the temp 
+                 temp.push_back(s);
+               //  index++ ;
+                 //a nd make the call for next 
+                 solve(S,ans,temp,i+1);
+                 // but if that string temp is not making using s string palindrome then we backtrack simple pop the previous s sting form the temp string 
+                 temp.pop_back();
+             }
+         }
+    }
+  public:
+    vector<vector<string>> allPalindromicPerms(string S) {
+        // code here
+        vector<vector<string>> ans ; // taking string 2d for storing the result overall
+        vector<string> temp ;  // taking string for storing the string that is palindrome
+        
+        int index = 0 ; // index taking check when string temp get equal to the given string size we have to store in ans 
+        
+        solve(S,ans,temp,index);
+        
+        return ans ;
+        
+    }
+};
+
+/***************************************************************************************************************************************/
