@@ -1,4 +1,4 @@
-Problem : Reverse Number 
+Problem : Sum of Digits Number 
 
 Given a number n. Find the sum of all the digits of n.
 
