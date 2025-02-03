@@ -1,0 +1,106 @@
+Problem : Palindrome Number 
+
+Problem Statement and Example : 
+You are given an integer n. Your task is to determine whether it is a palindrome.
+
+A number is considered a palindrome if it reads the same backward as forward, like the string examples "MADAM" or "MOM".
+
+Examples:
+
+Input: n = 555
+Output: true
+Explanation: The number 555 reads the same backward as forward, so it is a palindrome.
+
+Input: n = 123
+Output: false
+Explanation: The number 123 reads differently backward (321), so it is not a palindrome.
+
+Input: n = 1221
+Output: true
+
+Constraints:
+1 <= n <= 109
+
+Company Tags
+Zoho Samsung Oracle Adobe 
+
+
+/******************************************************************** SIMPLE APPPROACH :************************************************************************/
+class Solution {
+  public:
+  bool isPalindrome(int n) {
+    int temp = n ;
+        int rev = 0 ;
+        while(n > 0){
+            int d = n % 10 ;
+            rev = rev * 10 + d ;
+            n = n/10 ;
+        }
+        
+        if(rev != temp) return false ;
+        return true ;
+        
+      // Time taken : log10(n) 
+     }
+};
+
+/*********************************************************************** RECURSIVE APPROACH *******************************************************************/
+class Solution {
+  public:
+    int reverse(int n){
+        static int rev = 0;      // it help to remains updated value keeping ,  But this can cause for all the cases 
+        
+        // base case 
+        if(n == 0) return rev ;
+        
+        if(n > 0){
+            int d = n % 10 ;
+            rev = rev * 10 + d ;
+            reverse(n / 10) ;
+        }
+        
+    }
+    bool isPalindrome(int n) {
+
+        // Code here... 
+        // recursive approach 
+
+        int temp = n ;
+        
+        int rev = reverse(n);
+        
+        if(rev != temp) return false ;
+        
+        return true ;
+    }
+
+Time complexity : O(log10N ) and Space Complexity : O(log10N) 
+
+/**************************************************************** 2ND RECURSIVE APPROACH PASSING VALUE **********************************************/
+class Solution {
+  public:
+    int reverse(int n , int rev = 0){
+        
+        // base case 
+        if(n == 0) return rev ;
+        
+        if(n > 0){
+            int d = n % 10 ;
+            rev = rev * 10 + d ;
+            reverse(n / 10,rev) ; // each time both changing so we pass both as well
+        }
+        
+    }
+    bool isPalindrome(int n) {
+        // recursive approach 
+
+        int temp = n ;
+        
+        int rev = reverse(n);
+        
+        if(rev != temp) return false ;
+        
+        return true ;
+    }
+
+/************************************************************************************************************************************************************************/

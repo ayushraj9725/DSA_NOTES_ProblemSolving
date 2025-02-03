@@ -1,0 +1,92 @@
+Problem : Print Pattern ( backtracking )
+
+Problem statement and example : 
+Print a sequence of numbers starting with n, without using a loop. Replace n with n - 5, n−5... until n≤0. Then, replace n with n+5, n + 5, n+5 until n regains its initial value. Complete the function pattern(n) which takes n as input and returns a list containing the pattern.
+
+Examples
+
+Input: n = 16
+Output: 16 11 6 1 -4 1 6 11 16
+Explanation: The value decreases until it is greater than 0. After that it increases and stops when it becomes 16 again.
+
+Input: n = 10
+Output: 10 5 0 5 10
+Explanation: It follows the same logic as per the above example.
+
+Expected Time Complexity: O(n)
+Expected Auxiliary Space: O(n)
+
+Constraints:
+-105 ≤ n ≤ 105
+
+Company Tags
+Microsoft
+
+Topic Tags  : pattern-printing  Recursion   Algorithms
+
+
+/*********************************************************************** SIMPLEE APPROACH USING LOOP *******************************************************/
+class Solution{
+public:
+    void solve(int n , vector<int>& ans){
+        // we passed both of bcz both are updating each time
+
+        // base case if get n equal to less than n then we push that and return 
+
+        if(n <= 0){
+            ans.push_back(n);
+            return ;
+        }
+
+        // checking and working
+        ans.push_back(n); // storing n into the ans 
+
+        solve(n-5,ans); // and make call by -5 doing 
+
+        ans.push_back(n); // at returning time the previous function call has what value of n that we store uin this
+        // so how backtrack work over here 
+
+    }
+    vector<int> pattern(int N){
+        // code here : C++ 
+       // Recursive Code : O(N) time and O(N) space taking
+      
+       vector<int> ans ;
+       solve(N,ans);  // we are writing the backtrack function to do that
+       
+       return ans ;
+              
+    }
+};
+
+/*********************************************************************** RECURSIVE APPROACH USING BACKTRACKING **************************************//
+ class Solution{
+public:
+     vector<int> pattern(int N){
+
+        // Simple Appraoch to solve this problem :
+        vector<int> ans  ;
+
+        int tmp = N ;
+
+        while(N > 0){
+            ans.push_back(N) ;
+            N = N - 5 ;
+        }
+
+        // now again we make it same in ass
+
+        while(N <= tmp){
+            ans.push_back(N) ;
+            N = N + 5 ;
+        }
+        
+        return ans ; 
+        
+        // Time complexity : O(N) ans Space Complexity Same is as well 
+      
+        
+    }
+};
+
+/***************************************************************************************************************************************************************************/
