@@ -1,0 +1,127 @@
+Problem : Minimum Absolute Difference in BST ( leetcode 530 )
+
+Similar Problem : leetcode 783 
+
+Problem Statement : 
+Given the root of a Binary Search Tree (BST), return the minimum absolute difference between the values of any two different nodes in the tree.
+
+Example 1:
+Input: root = [4,2,6,1,3]
+Output: 1
+
+Example 2:
+Input: root = [1,0,48,null,null,12,49]
+Output: 1
+
+Constraints:
+
+The number of nodes in the tree is in the range [2, 104].
+0 <= Node.val <= 105
+ 
+/******************************************************************************** CPP CODE *************************************************************************/
+
+BRUTE FORCE SOLUTIO N : TAKE AN (N) SPACE ARRAY,  ALL THE ROOT NODE ELEMENT  IN ARR AND THEN SORT THEM (NLOGN) THAN TRAVERSE THE ARRAY AND FIND  :: 
+
+                                      // TOTAL TIME COMP : O(N) + (NLOGN) + O(N)    AND ADDITIONAL SPACE : O(N) \\
+
+BETTER APPROACH : O(N) TO TRAVERSE THE TREE INORDER WAY STORED IN TMP ARRAY USING O(K) SPACE AT LAST TRAVERSE THAT TMP ARRAY AND FIND THE MINIMUEST DIFF BET ADJESENT ELEMENT INO(N) TIME !
+
+
+CODE  : 
+  
+class Solution {
+public:
+    void inorder(TreeNode* root , vector<int> &arr){
+        // base case 
+        if(!root) return ;
+
+        // recursive case and call 
+
+        inorder(root->left,arr);
+        arr.push_back(root->val);
+        inorder(root->right,arr);
+
+    }
+    int getMinimumDifference(TreeNode* root) {
+     // take extra space to store all root node in arr because it is inorder traversal so what we put in arr that beacome in sorted way
+ 
+        vector<int> arr ;
+        inorder(root,arr);
+        int ans = INT_MAX ; ;
+        for(int i = 1 ;i < arr.size() ; i++){
+            ans = min(ans,arr[i]-arr[i-1]) ;
+        }
+          return ans ;
+    } 
+};
+
+                                 / ********************************************* OPTIMIZED CPP CODDE ***************************************************\
+
+class Solution {
+public:
+       TreeNode * prev = NULL ;
+       void solve(TreeNode* root , int &ans){
+           // base case 
+           if(!root) return ;
+
+           if(root->left) solve(root->left , ans);
+           if(prev != NULL) {
+               ans = min(ans, abs(prev->val - root->val));
+           }
+
+           prev = root ; // after calculating diff change the prev with the previous value 
+           // now make call for the right child
+           if(root->right) solve(root->right,ans); // root has right child then make call 
+       }
+       int getMinimumDifference(TreeNode* root) {
+
+           int ans = INT_MAX ;
+           solve(root,ans);
+
+           return ans ;
+       }
+};
+
+
+/******************************************************************************** JAVA CODE **********************************************************************/
+
+ public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    // this is inorder traversal 
+    void findDiff(TreeNode root , int minDiff[] , TreeNode[] prev ){
+        // base case
+        if(root == null) return ;
+        // call for the left 
+        findDiff(root.left,minDiff,prev);
+        if(prev[0] != null ) {
+            minDiff[0] = Math.min(minDiff[0],Math.abs(prev[0].val - root.val));
+        }
+        // now prev we change with root 
+        prev[0] = root ;
+        // now call for the right child
+        findDiff(root.right,minDiff,prev);
+
+    }
+    public int getMinimumDifference(TreeNode root) {
+        int minDiff[] = {Integer.MAX_VALUE} ;
+        TreeNode[] prev = {null} ; // this stored the previous node helps to find the curr difference 
+        findDiff(root,minDiff,prev);
+
+        return minDiff[0] ;
+    }
+}
+
+
+/**********************************************************************************************************************************************************************/
