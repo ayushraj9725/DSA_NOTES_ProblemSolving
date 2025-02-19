@@ -1,0 +1,213 @@
+Problem : Binary Tree Paths ( Leetcode 257 )
+
+Problem Statement : 
+Given the root of a binary tree, return all root-to-leaf paths in any order.
+A leaf is a node with no children.
+
+ 
+Example 1:
+Input: root = [1,2,3,null,5]
+Output: ["1->2->5","1->3"]
+
+Example 2:
+Input: root = [1]
+Output: ["1"]
+ 
+
+Constraints:
+
+The number of nodes in the tree is in the range [1, 100].
+-100 <= Node.val <= 100
+
+Topics
+String
+Backtracking
+Tree
+Depth-First Search
+Binary Tree
+
+
+/******************************************************************************* CPP CODE ****************************************************************************/
+
+ struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+     void solve(TreeNode* root, vector<string>& ans, string currStr) {
+        // Base case: if root is null, return
+        if (root == nullptr) return;
+
+        // Append the current node's value to currStr
+        if (!currStr.empty()) {
+            currStr += "->";  // Add '->' if currStr is not empty
+        }
+        currStr += to_string(root->val);  // Append the current node value
+
+        // If it's a leaf node, add the current path to the result
+        if (root->left == nullptr && root->right == nullptr) {
+            ans.push_back(currStr);
+        } else {
+            // Recursively explore the left and right subtrees
+            if (root->left) {
+                solve(root->left, ans,currStr);
+            }
+            if (root->right) {
+                solve(root->right, ans,currStr);
+            }
+        }
+
+        // No backtracking needed, each recursive call uses a fresh string
+    }
+    vector<string> binaryTreePaths(TreeNode* root) {
+        vector<string> ans;
+        solve(root, ans,"");
+        return ans;
+    }
+};
+
+TIME COMP : O(N) 
+
+/*******************************************************************************JAVA CODE ***************************************************************************/
+
+public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    void solve(TreeNode root , List<String> ans , StringBuilder currStr){
+        // base case 
+        if(root == null) return ;
+        // take length for resting the currStr
+        int ln = currStr.length();
+        // put the root data in the currStr
+        if(ln > 0){
+            currStr.append("->");
+        }
+        currStr.append(root.val); // insert data over here in curr Str 
+        // recursive case ; check , calls and conditions 
+        if(root.left == null && root.right == null){
+            // than add that currStr in to the ans
+            ans.add(currStr.toString());
+        }else{
+            // otherwise make call for the left and right child same
+            solve(root.left , ans , currStr);
+            solve(root.right , ans , currStr);
+        }
+        // now reset the currString using backtracking bcz we have to take previous length
+        currStr.setLength(ln); // we want to start from new length
+        
+    }
+    public List<String> binaryTreePaths(TreeNode root) {
+        List<String> ans = new ArrayList<>();
+        StringBuilder currStr = new StringBuilder();
+
+        solve(root,ans,currStr);
+
+        return ans ;
+      
+        // without backtracking we solve it on C++ code Editor 
+    }
+}
+
+
+/***************************************************************************** GFG CODE ****************************************************************************/
+
+Problem Link : https://www.geeksforgeeks.org/problems/root-to-leaf-paths/1?itm_source=geeksforgeeks&itm_medium=article&itm_campaign=practice_card
+
+
+Problem Statement : 
+Given a Binary Tree, you need to find all the possible paths from the root node to all the leaf nodes of the binary tree.
+
+Note: The paths should be returned such that paths from the left subtree of any node are listed first, followed by paths from the right subtree.
+
+Examples:
+
+Input: root[] = [1, 2, 3, 4, 5]
+ex-3
+Output: [[1, 2, 4], [1, 2, 5], [1, 3]] 
+Explanation: All possible paths: 1->2->4, 1->2->5 and 1->3
+Input: root[] = [1, 2, 3]
+       1
+    /     \
+   2       3
+Output: [[1, 2], [1, 3]] 
+Explanation: All possible paths: 1->2 and 1->3
+
+
+Input: root[] = [10, 20, 30, 40, 60]
+         10
+       /    \
+      20    30
+     /  \
+    40   60
+Output: [[10, 20, 40], [10, 20, 60], [10, 30]]
+Explanation: All possible paths: 10->20 ->40, 10->20->60 and 10->30
+
+
+Constraints:
+1<=number of nodes<=104
+1<=node->data<=104
+
+Company Tags
+Paytm   Amazon 
+
+
+/**************************************************************************** CPP SOLUTION **********************************************************************//
+
+struct Node
+{
+    int data;
+    struct Node* left;
+    struct Node* right;
+
+    Node(int x){
+        data = x;
+        left = right = NULL;
+    }
+};
+*/
+
+class Solution {
+  public:
+    void solve(Node* root ,vector<int> &curr , vector<vector<int>> &ans){
+        // base case 
+        if(root == nullptr) return ;
+        
+        curr.push_back(root->data);
+        
+        if(!root->left && !root->right){
+            ans.push_back(curr);
+        }else{
+            if(root->left) solve(root->left,curr,ans);
+            if(root->right) solve(root->right,curr,ans);
+        }
+        curr.pop_back();
+    }
+    vector<vector<int>> Paths(Node* root) {
+        // code here
+        vector<vector<int>> ans ;
+        vector<int> curr ;
+        solve(root,curr,ans) ;
+        
+        return ans ;
+    }
+};
+
+/************************************************************************************************************************************************************************/
+

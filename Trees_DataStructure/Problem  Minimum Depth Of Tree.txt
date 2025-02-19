@@ -1,0 +1,76 @@
+Problem : Minimum Depth Of Tree 
+
+Problem Statement : 
+Given a binary tree, find its minimum depth.
+
+Examples:
+
+Input: root = [1, 3, 2, 4]
+            1
+          /   \
+         3     2
+        /
+       4           
+
+Output: 2
+Explanation: Minimum depth is between nodes 1 and 2 since minimum depth is defined as  the number of nodes along the shortest path from the root node down to the nearest leaf node.
+Input: root = [10, 20, 30, N, 40, N, 60, N, N, 2]
+             10
+          /     \
+        20       30
+          \        \   
+          40        60 
+                   /
+                  2 
+
+Output: 3
+Explanation: Minimum depth is between nodes 10,20 and 40. 
+Expected Time Complexity: O(n)
+Expected Auxiliary Space: O(height of the tree)
+
+Constraints:
+1 ≤ number of nodes ≤ 105
+
+Company Tags
+Amazon  Microsoft  Facebook
+
+
+Topic Tags
+TreeData Structures
+
+
+/******************************************************************************** CPP SOLUTION ***********************************************************************/
+
+struct Node
+{
+    int data;
+    Node* left;
+    Node* right;
+}; 
+
+class Solution{
+  public:
+    /*You are required to complete this method*/
+    int minDepth(Node *root) {
+        // Your code here
+        if(!root) return 0; 
+        
+        // If the left child is null, we need to take the depth of the right subtree
+        if (!root->left) return minDepth(root->right) + 1;
+        
+        // similarly if right child is null , we need to take the depth of the left subtree
+        if(!root->right) return minDepth(root->left) + 1 ;
+        
+        int lh = minDepth(root->left);
+        int rh = minDepth(root->right);
+        
+        return min(lh,rh)+1 ;
+    }
+};
+
+
+/******************************************************************************** JAVA SOLUTION *******************************************************************/
+
+
+
+/***************************************************************************************************************************************************************************/
