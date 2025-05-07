@@ -1,0 +1,212 @@
+Problem : Left View of Binary Tree
+
+Problem Solution and Approach : 
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////// DFS TRAVERSAL APPROACH \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+2️⃣ DFS (Preorder) Approach – Using Recursion       ::::: PREORDER TRAVERSAL ::::::
+How It Works
+
+-> We prioritize the left child while traversing.
+-> We track levels explicitly to ensure only the first node per level is recorded.
+-> If we visit a new level for the first time, we store the node.
+
+
+Step-by-Step Execution
+
+        1
+       / \
+      2   3
+     / \
+    4   5
+Start from root (1), level 0 → ans = [1]
+Go left (2), level 1 → ans = [1,2]
+Go left (4), level 2 → ans = [1,2,4]
+Backtrack to (2) → right (5), level 2 (Already visited, ignore)
+Backtrack to (1) → right (3), level 1 (Already visited, ignore)
+Done! 🎯
+
+Code Implementation
+
+void solve(Node* root, int level, vector<int>& ans) {
+    if (!root) return;
+    
+    if (level == ans.size()) ans.push_back(root->data); // First node at this level
+    
+    solve(root->left, level + 1, ans);  // Prioritize left
+    solve(root->right, level + 1, ans); // Then right
+}
+
+vector<int> leftView(Node *root) {
+    vector<int> ans;
+    solve(root, 0, ans);
+    return ans;
+}
+
+
+
+✅ DFS is better when:
+
+Memory is a concern (O(H) instead of O(N)).
+You want a simpler approach with recursion.
+
+2️⃣ DFS (Preorder with Level Tracking)   ******************************** TIME TAKEN : O(N) ***********************************
+✅ Pros:
+
+Lower space complexity  :𝑂(𝐻)
+O(H) (only recursive stack, where H is height).
+
+Efficient for deep trees (avoids storing all nodes like BFS).
+Naturally ensures left-first traversal.
+
+❌ Cons:
+
+Uses recursion, which may cause stack overflow for very deep trees.
+Requires explicit level tracking.
+
+/////////////////////////////////////////////////////////////////////////////////////////// BFS TRAVERSAL USING QUEUE \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
+
+
+1️⃣ BFS (Level Order) Approach – Using Queue       ::::::: TIME TAKEN : O(N) :::::::: SPACE O(N) IN WORTH CASE  ;;;;;;
+
+How It Works
+
+We use a queue (FIFO) to process nodes level by level.
+At each level, we ensure the first node encountered is stored in the result.
+We process children left to right.
+Step-by-Step Execution
+Example Tree:
+
+        1
+       / \
+      2   3
+     / \
+    4   5
+
+Start with root node (1) in queue: q = [1]
+Process first node in queue: 
+
+Add it to ans = [1]
+Push left (2) and right (3) into queue: q = [2,3]
+
+Next level (q = [2,3]):
+Process first node (2) → add to ans = [1,2]
+
+Push left (4) and right (5) into queue: q = [3,4,5]
+Next level (q = [3,4,5]):
+
+Process first node (4) → add to ans = [1,2,4]
+No children, continue.
+Queue empty → Done! 🎯
+
+
+Code Implementation
+
+
+vector<int> leftView(Node *root) {
+    vector<int> ans;
+    if (!root) return ans;
+    
+    queue<Node*> q;
+    q.push(root);
+    
+    while (!q.empty()) {
+        int size = q.size();
+        for (int i = 0; i < size; i++) {
+            Node* curr = q.front();
+            q.pop();
+            
+            if (i == 0) ans.push_back(curr->data);  // First node at this level
+            
+            if (curr->left) q.push(curr->left);
+            if (curr->right) q.push(curr->right);
+        }
+    }
+    return ans;
+}
+
+
+
+💡 When to Use Which?
+✅ BFS is better when:
+
+You want a level-based traversal.
+You don't want recursion (avoids stack overflow).
+
+1️⃣ BFS (Level Order using Queue)
+✅ Pros:
+
+Guarantees first node at each level naturally.
+Uses a queue to process nodes level by level.
+Easy to understand and implement.
+
+❌ Cons:
+
+Higher space complexity 𝑂(𝑁)
+
+O(N) in the worst case (wide trees).
+Extra for loop iteration per level.
+
+
+//////////////////////////////////////                   ******************************  JAVA CODE  **************************
+
+
+
+import java.util.*;
+
+class Node {
+    int data;
+    Node left, right;
+    
+    public Node(int data) {
+        this.data = data;
+        left = right = null;
+    }
+}
+
+class Solution {
+    public List<Integer> leftView(Node root) {
+        List<Integer> result = new ArrayList<>();
+        if (root == null) return result;
+
+        Queue<Node> queue = new LinkedList<>();
+        queue.add(root);
+
+        while (!queue.isEmpty()) {
+            int size = queue.size(); // Number of nodes at the current level
+
+            for (int i = 0; i < size; i++) {
+                Node curr = queue.poll();
+
+                // First node of each level is added to the result
+                if (i == 0) {
+                    result.add(curr.data);
+                }
+
+                // Push left child first, then right child
+                if (curr.left != null) queue.add(curr.left);
+                if (curr.right != null) queue.add(curr.right);
+            }
+        }
+        return result;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Node root = new Node(1);
+        root.left = new Node(2);
+        root.right = new Node(3);
+        root.left.left = new Node(4);
+        root.left.right = new Node(5);
+        root.right.right = new Node(6);
+
+        Solution sol = new Solution();
+        List<Integer> leftView = sol.leftView(root);
+        
+        System.out.println("Left View: " + leftView);  // Output: [1, 2, 4]
+    }
+}

@@ -1,0 +1,136 @@
+Problem : Maximum sum of Non-adjacent nodes
+
+Problem Statement : 
+Given a binary tree with a value associated with each node, we need to choose a subset of these nodes such that the sum of chosen nodes is maximum under a constraint that no two chosen nodes in the subset should be directly connected that is, if we have taken a node in our sum then we can’t take its any children or parents in consideration and vice versa.
+
+Examples:
+
+Input:
+
+Output: 11
+Explanation: The maximum sum is sum of node 11.
+
+Input:
+ 
+Output: 16
+Explanation: The maximum sum is sum of nodes 1 4 5 6, i.e 16. These nodes are non adjacent.
+
+Constraints:
+1 ≤ Number of nodes in the tree ≤ 104
+1 ≤ Value of each node ≤ 105
+
+Company Tags
+Flipkart   Amazon  Google
+
+
+/********************************************************************* PROBLEM SOLUTION CPP ********************************************************************/
+
+                                                              ///// Recursively Solve : Time Comp : O(2^n) , Space Comp : O(N) \\\\\\\
+
+//Node Structure
+/*
+struct Node
+{
+    int data;
+    Node* left;
+    Node* right;
+};
+*/
+
+class Solution{
+  public:
+    //Function to return the maximum sum of non-adjacent nodes.
+    int getMaxSum(Node *root) 
+    {
+        // Add your code here
+        // Brute Force solution : Recursivly call the function 
+        // Appraoch : there is two cases 1 to call with node , and without node including
+        // we are calling grandchildren with node , and child call without node and extract or collect the data from there
+        // here need to optimization : using DP using map we check the unnecessary recursivly calls
+        
+        
+        // base case
+        if(!root) return 0 ;  // if get root null just return 0 from there 
+        
+        
+        // case 1 : with node , calling the grandchild for getMax 
+        
+        int withnode = root->data ; // take root data 
+        // now call recursivly and take data 
+        
+        if(root->left){
+            withnode += getMaxSum(root->left->left);
+            withnode += getMaxSum(root->left->right);
+        }
+        
+        if(root->right){
+            withnode += getMaxSum(root->right->left);
+            withnode += getMaxSum(root->right->right);
+        }
+        
+        // case 2 : without node , calling directly children and collect data
+        
+        int withoutnode = getMaxSum(root->left) + getMaxSum(root->right) ;
+        
+        
+        // now we can return the max of both 
+        
+        return max(withnode,withoutnode);
+        
+        
+    }
+};
+
+
+/*********************************************************************** OPTIMIZED SOLUTION ***********************************************************************/
+
+                    //// USING DP MEMORIZATION : TIME COMP : O(N) ( number of node in tree ) Space : O(N) -> map space and height of tree \\\\
+
+class Solution{
+  public:
+    //Function to return the maximum sum of non-adjacent nodes.
+    unordered_map<Node* , int> m ; // 
+    int getMaxSum(Node *root) 
+    {
+        // Add your code here
+        // Brute Force solution : Recursivly call the function 
+        // Appraoch : there is two cases 1 to call with node , and without node including
+        // we are calling grandchildren with node , and child call without node and extract or collect the data from there
+        // here need to optimization : using DP using map we check the unnecessary recursivly calls
+        // just decleare the map and store than check the every recursive calls
+        
+        // base case
+        if(!root) return 0 ;  // if get root null just return 0 from there 
+        if(m[root]) return m[root] ;
+        
+        // case 1 : with node , calling the grandchild for getMax 
+        
+        int withnode = root->data ; // take root data 
+        // now call recursivly and take data 
+        
+        
+        if(root->left){
+            withnode += getMaxSum(root->left->left);
+            withnode += getMaxSum(root->left->right);
+        }
+        
+        if(root->right){
+            withnode += getMaxSum(root->right->left);
+            withnode += getMaxSum(root->right->right);
+        }
+        
+        // case 2 : without node , calling directly children and collect data
+        
+        int withoutnode = getMaxSum(root->left) + getMaxSum(root->right) ;
+        
+        
+        // now we can return the max of both 
+        
+        return m[root] = max(withnode,withoutnode);
+        
+        
+    }
+};
+
+/**************************************************************************  JAVA SOLUTION ***************************************************************************/
+

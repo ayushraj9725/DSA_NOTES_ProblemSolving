@@ -1,0 +1,57 @@
+Problem : Root to leaf path sum
+
+Problem Statement : 
+
+Given a binary tree and an integer target, check whether there is a root-to-leaf path with its sum as target.
+
+Examples :
+
+Input: target = 2
+   1 
+ /   \
+2     3
+Output: false
+Explanation: There is no root to leaf path with sum 2.
+Input: target = 4
+   1
+ /   \
+2     3
+Output: true
+Explanation: The sum of path from leaf node 3 to root 1 is 4.
+
+
+Constraints:
+1 ≤ number of nodes ≤ 104
+1 ≤ target ≤ 106
+
+/ ************************************************************************ SOLUTION CODE C++ *******************************************************************/
+
+
+struct Node
+{
+    int data;
+    Node* left, * right;
+}; */
+
+/*you are required to
+complete this function */
+class Solution {
+  public:
+    bool hasPathSum(Node *root, int target) {
+        // Your code here
+        // Recursivly we solve this problem using the : DFS Traversal 
+        // base case
+        if(!root) return false ; // if not found 
+        /// Recursive case
+        if(!root->left && !root->right){
+            // both are null then we check for the tarrget if found then return true otherwise false
+            return target == root->data ;
+        }
+        // made new target
+        int newtarget = target - root->data ;
+        
+        // now call recursive and check for the left or right
+        
+        return hasPathSum(root->left,newtarget) || hasPathSum(root->right,newtarget);
+    }
+};

@@ -1,0 +1,103 @@
+Problem : Odd even level difference
+
+Problem Statement : 
+Given a Binary Tree. Find the difference between the sum of node values at even levels and the sum of node values at odd levels.
+
+Examples:
+
+Input: root [1, 2, 3]
+            1
+          /   \
+         2     3
+Output: -4
+Explanation: sum at odd levels - sum at even levels = (1)-(2+3) = 1-5 = -4
+
+
+Input: root = [10, 20, 30, 40, 60]
+            10
+          /    \
+        20      30
+       /     \         
+     40    60      
+Output: 60
+Explanation: sum at odd levels - sum at even levels = (10+40+60) - (20+30) = 110 - 50 = 60 
+
+
+Input: root = [1, 2, 4]
+            1
+          /   \
+         2     4
+Output: -4
+Explanation: sum at odd levels - sum at even levels = (1)-(2+4) = 1-6 = -5
+
+
+Constraints:
+1 ≤ number of nodes ≤ 105
+1 ≤ node->data ≤ 105
+
+
+/************************************************************************************ SOLUTION CODE ************************************************************/
+
+
+
+struct Node
+{
+    int data;
+    Node* left;
+    Node* right;
+}; */
+
+class Solution{
+  public:
+    /*You are required to complete this function*/
+    void solve(Node *root , int level, int &ans ){
+        // Base Case : 
+        if(!root) return ;
+        int l = (root->left) ? root->left->data : 0 ;
+        int r = (root->right) ? root->right->data : 0 ;
+        
+        if(level % 2 == 0) ans = ans + l + r ;
+        if(level % 2 != 0) ans = ans - l - r ;
+        
+        solve(root->left,level+1,ans);
+        solve(root->right,level+1,ans);
+        
+    }
+    int getLevelDiff(Node *root)
+    {
+       //Your code here
+       int ans = root -> data ;  
+       
+       solve(root,1,ans);
+       
+       return ans ;
+    }
+};
+
+
+
+/ /********************************************************************* 2ND WAY ***************************************************************************//
+
+
+class Solution {
+public:
+    int solve(Node* root, int level) {
+        // Base Case
+        if (!root) return 0;
+
+        // Compute the sum for left and right subtrees recursively
+        int leftSum = solve(root->left, level + 1);
+        int rightSum = solve(root->right, level + 1);
+
+        // Add or subtract the current node's value based on level parity
+        if (level % 2 == 0) 
+            return root->data + leftSum + rightSum;  // Even level -> Add
+        else 
+            return -root->data + leftSum + rightSum; // Odd level -> Subtract
+    }
+
+    int getLevelDiff(Node* root) {
+        return solve(root, 0);  // Start from level 0
+    }
+};
+

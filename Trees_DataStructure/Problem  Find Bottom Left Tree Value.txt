@@ -1,0 +1,108 @@
+Problem : Find Bottom Left Tree Value ( leetcode 513 )
+
+Problem Statement : 
+
+Given the root of a binary tree, return the leftmost value in the last row of the tree.
+
+Example 1:
+
+
+Input: root = [2,1,3]
+Output: 1
+Example 2:
+
+
+Input: root = [1,2,3,4,null,5,6,null,null,7]
+Output: 7
+ 
+
+Constraints:
+
+The number of nodes in the tree is in the range [1, 104].
+-231 <= Node.val <= 231 - 1
+
+Time and Space comp : O(N) Both
+
+
+///******************************************************************* DFS C++ SOLUTION ***********************************************************************/
+
+struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+class Solution {
+public:
+    void solve(TreeNode *root , int& ans, int& maxDepth , int depth){
+        // base condition 
+        if(!root) return ;
+        // preorder
+        if(depth > maxDepth){
+            ans = root->val ;
+            maxDepth = depth ; // update it so we can check for the subtree furthere
+        }
+        // now calls the left right subtrees
+        solve(root->left,ans,maxDepth,depth+1);
+        solve(root->right,ans,maxDepth,depth+1);
+    }
+    int findBottomLeftValue(TreeNode* root) {
+        int ans = root->val ;
+        int maxDepth = 0 ;
+
+        solve(root,ans,maxDepth,0);
+
+        return ans ;
+    }
+};
+
+
+/********************************************************************* DFS JAVA SOLN *************************************************************************/
+
+public class TreeNode {
+ *     int val;
+ *     TreeNode left;
+ *     TreeNode right;
+ *     TreeNode() {}
+ *     TreeNode(int val) { this.val = val; }
+ *     TreeNode(int val, TreeNode left, TreeNode right) {
+ *         this.val = val;
+ *         this.left = left;
+ *         this.right = right;
+ *     }
+ * }
+ */
+class Solution {
+    void solve(TreeNode root , int[] ans, int[] maxDepth , int depth){
+        // base condition 
+        if(root == null) return ;
+ 
+        //recursive calls and operation : go for the preorder traversal 
+
+        // If we are at a deeper level than seen before, update ans
+        if (depth > maxDepth[0]) {
+            ans[0] = root.val;
+            maxDepth[0] = depth;
+        }
+        // now go for the calls 
+        // Visit left subtree first to ensure leftmost node is prioritized
+
+        solve(root.left,ans,maxDepth,depth+1);
+        solve(root.right,ans,maxDepth,depth+1);
+    }
+    public int findBottomLeftValue(TreeNode root) {
+        // Using DFS we are going to approach this problem recursivly 
+        int[] ans = {root.val} ;
+        int[] maxDepth = {0} ;
+        
+        solve(root,ans,maxDepth,0);
+
+        return ans[0] ;
+    }
+}
+
+
+/********************************************************************* BFS C++ SOLUTION ********************************************************************/

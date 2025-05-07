@@ -1,0 +1,87 @@
+Problem :: Sum of Leaf Nodes at Min Level
+
+
+Problem statement : 
+
+Given a Binary Tree, find the sum of all the leaf nodes that are at minimum level of the given binary tree.
+
+Examples:
+
+Input: 
+         1
+        /  \
+       2    3
+     /  \     \
+    4    5     8 
+  /  \ 
+ 7    2      
+Output: 13
+Explanation: sum = 5 + 8 = 13
+Input: 
+         1
+      /    \
+     2      3
+    / \    / \
+   4   5  6   7
+Output: 22
+
+Input: 1
+Output: 1
+Constraints:
+1 <= number of nodes <= 105
+1 <= node->data <= 105
+
+
+/******************************************************************************** SOLUTION C++ ********************************************************************/
+
+struct Node
+{
+    int data;
+    struct Node *left;
+    struct Node *right;
+
+    Node(int x)
+    {
+        data = x;
+        left = NULL;
+        right = NULL;
+    }
+};
+*/
+
+class Solution
+{
+public:
+    void solve(Node *root , int& ans , int& minDepth , int depth){
+        // base case 
+        if(!root) return ;
+        // recursive case (coniditions and calls)
+        
+        // check if current node is leaf node
+        if(!root->left && !root->right){
+            // now check for the latest leaf and take currrnt leaf in ans
+            if(depth < minDepth){
+                minDepth = depth ; // update mindepth with depth
+                ans = root->data ;
+            }
+            // now check id depth and minDepth equal and update ans 
+            else if(depth == minDepth) ans += root->data ; // with data or curr root
+        
+            return ; // and instant return 
+        }
+        
+        
+        solve(root->left,ans,minDepth,depth+1);
+        solve(root->right,ans,minDepth,depth+1);
+    }
+    int minLeafSum(Node *root)
+    {
+        //code here
+        int ans = 0 ;
+        int minDepth = INT_MAX ;
+        solve(root,ans,minDepth,0);
+        
+        return ans ;
+    }
+    
+};

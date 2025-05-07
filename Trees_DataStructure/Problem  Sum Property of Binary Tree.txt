@@ -1,0 +1,43 @@
+Problem : Sum Property of Binary Tree
+
+
+
+Problem statement : 
+A tree satisfies the sum property if for each non-leaf node, the node's value is equal to the sum of its left and right child values.
+
+Code Solution : 
+
+
+class Solution {
+public:
+    bool isSumProperty(Node* root) {
+        // Base case
+        if (!root || (!root->left && !root->right)) return true;
+        
+        // Calculate left & right child sum
+        int leftVal = (root->left) ? root->left->data : 0;
+        int rightVal = (root->right) ? root->right->data : 0;
+        
+        // Check if current node satisfies sum property
+        if (root->data != leftVal + rightVal) return false;
+        
+        // Recur for left & right subtree
+        return isSumProperty(root->left) && isSumProperty(root->right);
+    }
+};
+
+
+Explaination
+; 
+
+✅ Correct Approach: Using DFS (Recursive)
+Algorithm
+Base Case:
+If the node is NULL, return 1 (True).
+If the node is a leaf node (no children), return 1 (True).
+Calculate sum of children:
+Get left->data (if exists) else 0.
+Get right->data (if exists) else 0.
+Check if root->data == left + right.
+Recursively check left and right children.
+If both left & right subtrees satisfy the condition, return 1, else return 0.

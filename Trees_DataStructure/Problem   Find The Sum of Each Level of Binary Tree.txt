@@ -1,0 +1,198 @@
+Problem  : Find The Sum of Each Level of Binary Tree 
+
+To find the sum of nodes at each level in a binary tree using DFS, we need to:
+
+Traverse the tree using DFS (Preorder, Inorder, or Postorder).
+Maintain a map (or list) to store the sum of nodes at each level.
+Keep track of the current depth (level) of the tree.
+
+✅ Approach
+Use DFS (Preorder Traversal: Root → Left → Right)
+Pass level as a parameter to track depth.
+Store the sum in a list/map, indexed by level.
+Recursively traverse left and right children, increasing the level.
+
+
+/************************************************************************* SOLUTION DFS TRAVERSAL C++ *******************************************************/
+
+#include <iostream>
+#include <vector>
+using namespace std;
+
+// Definition of TreeNode
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+};
+
+class Solution {
+public:
+    void dfs(TreeNode* root, int level, vector<int>& levelSum) {
+        if (root == NULL) return;
+
+        // Expand the vector if this is the first time reaching this level
+        if (levelSum.size() == level) {
+            levelSum.push_back(0);
+        }
+
+        // Add the current node's value to its level sum
+        levelSum[level] += root->val;
+
+        // Recursive DFS calls for left and right children
+        dfs(root->left, level + 1, levelSum);
+        dfs(root->right, level + 1, levelSum);
+    }
+
+    vector<int> levelSum(TreeNode* root) {
+        vector<int> levelSum;
+        dfs(root, 0, levelSum);
+        return levelSum;
+    }
+};
+
+// Driver Code
+int main() {
+    /*
+          1
+         / \
+        2   3
+       / \   \
+      4   5   6
+    */
+    TreeNode* root = new TreeNode(1);
+    root->left = new TreeNode(2);
+    root->right = new TreeNode(3);
+    root->left->left = new TreeNode(4);
+    root->left->right = new TreeNode(5);
+    root->right->right = new TreeNode(6);
+
+    Solution sol;
+    vector<int> sums = sol.levelSum(root);
+
+    // Print level-wise sums
+    for (int i = 0; i < sums.size(); i++) {
+        cout << "Level " << i << ": " << sums[i] << endl;
+    }
+
+    return 0;
+}
+
+
+/*************************************************************************ALTERNATIVE APPROACH ************************************************************/
+
+#include <iostream>
+#include <map>
+using namespace std;
+
+class Solution {
+public:
+    void dfs(TreeNode* root, int level, map<int, int>& levelSum) {
+        if (root == NULL) return;
+
+        // Add current node value to its corresponding level sum
+        levelSum[level] += root->val;
+
+        dfs(root->left, level + 1, levelSum);
+        dfs(root->right, level + 1, levelSum);
+    }
+
+    vector<int> levelSum(TreeNode* root) {
+        map<int, int> levelSum;
+        dfs(root, 0, levelSum);
+
+        vector<int> result;
+        for (auto it : levelSum) {
+            result.push_back(it.second);
+        }
+        return result;
+    }
+};
+
+
+/************************************************************************* SOLUTION USING JAVA CODE ********************************************************/
+
+import java.util.*;
+
+class TreeNode {
+    int val;
+    TreeNode left, right;
+    TreeNode(int val) { this.val = val; }
+}
+
+class Solution {
+    public void dfs(TreeNode root, int level, List<Integer> levelSum) {
+        if (root == null) return;
+
+        // If the level is encountered for the first time, add new entry
+        if (levelSum.size() == level) {
+            levelSum.add(0);
+        }
+
+        // Add the node's value to the current level sum
+        levelSum.set(level, levelSum.get(level) + root.val);
+
+        // Recursive DFS calls for left and right children
+        dfs(root.left, level + 1, levelSum);
+        dfs(root.right, level + 1, levelSum);
+    }
+
+    public List<Integer> levelSum(TreeNode root) {
+        List<Integer> levelSum = new ArrayList<>();
+        dfs(root, 0, levelSum);
+        return levelSum;
+    }
+
+    public static void main(String[] args) {
+        // Sample Tree
+        /*
+              1
+             / \
+            2   3
+           / \   \
+          4   5   6
+        */
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        root.left.right = new TreeNode(5);
+        root.right.right = new TreeNode(6);
+
+        Solution solution = new Solution();
+        List<Integer> sums = solution.levelSum(root);
+        System.out.println(sums);  // Output: [1, 5, 15] (1 → (2+3) → (4+5+6))
+    }
+}
+
+
+⏳ Time Complexity Analysis
+Each node is visited once → O(N)
+Space Complexity (Recursion Stack) → O(H) (Height of Tree)
+Extra Space for Level Sum List → O(L) (Number of Levels)
+
+
+/**************************************************************************ALTERNATIVE JAVA *********************************************************************/
+
+import java.util.*;
+
+class Solution {
+    public void dfs(TreeNode root, int level, Map<Integer, Integer> levelSum) {
+        if (root == null) return;
+
+        // Add current node value to its corresponding level sum
+        levelSum.put(level, levelSum.getOrDefault(level, 0) + root.val);
+
+        dfs(root.left, level + 1, levelSum);
+        dfs(root.right, level + 1, levelSum);
+    }
+
+    public List<Integer> levelSum(TreeNode root) {
+        Map<Integer, Integer> levelSum = new HashMap<>();
+        dfs(root, 0, levelSum);
+        return new ArrayList<>(levelSum.values());
+    }
+}
+
+

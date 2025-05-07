@@ -1,0 +1,160 @@
+problem : Decode the string
+
+Problem Statement : 
+Given an encoded string s, the task is to decode it. The encoding rule is :
+
+k[encodedString], where the encodedString inside the square brackets is being repeated exactly k times. Note that k is guaranteed to be a positive integer.
+Note: The test cases are generated so that the length of the output string will never exceed 105 .
+
+Examples:
+
+Input: s = "1[b]"
+Output: "b"
+Explanation: "b" is present only one time.
+
+Input: s = "3[b2[ca]]"
+Output: "bcacabcacabcaca"
+Explanation:
+
+1. Inner substring “2[ca]” breakdown into “caca”.
+2. Now, new string becomes “3[bcaca]”
+3. Similarly “3[bcaca]” becomes “bcacabcacabcaca ” which is final result.
+
+
+Constraints:
+1 ≤ |s| ≤ 105 
+
+Company Tags
+Microsoft  Facebook
+
+Expected Complexities
+Time Complexity : O(n)Auxiliary Space : O(n)
+
+  /  ***************************************************      JAVA   SOLUTION   USING   RECURSION      ***************************************************  /
+
+
+public class DecodeString {
+    private int index = 0; // Global index to track the current position in the string
+
+    public String decodeString(String s) {
+        return decode(s);
+    }
+
+    private String decode(String s) {
+        StringBuilder result = new StringBuilder();
+
+        while (index < s.length()) {
+            char ch = s.charAt(index);
+
+            if (Character.isDigit(ch)) {
+                // Extract the entire number (k)
+                int k = 0;
+                while (index < s.length() && Character.isDigit(s.charAt(index))) {
+                    k = k * 10 + (s.charAt(index) - '0');
+                    index++;
+                }
+
+                // Skip the '[' character
+                index++;
+
+                // Recursively decode the string inside the brackets
+                String decodedString = decode(s);
+
+                // Append the decoded string k times
+                for (int i = 0; i < k; i++) {
+                    result.append(decodedString);
+                }
+
+                // Skip the ']' character
+                index++;
+            } else if (ch == ']') {
+                // Return the result when encountering ']'
+                break;
+            } else {
+                // Append the character to the result
+                result.append(ch);
+                index++;
+            }
+        }
+
+        return result.toString();
+    }
+
+    public static void main(String[] args) {
+        DecodeString decoder = new DecodeString();
+        String input = "3[a]2[bc]";
+        String output = decoder.decodeString(input);
+        System.out.println("Decoded string: " + output); // Output: "aaabcbc"
+    }
+}
+
+-> Complexity Analysis:
+
+* Time Complexity:
+
+O(n), where n is the length of the decoded string. Each character is processed once.
+
+* Space Complexity:
+
+O(m), where m is the maximum depth of recursion (e.g., for nested patterns like 3[a2[c]]).
+
+
+/************************************************************** CPP SOLUTION ********************************************************************************/
+
+LEETCODE : PROBLEM NUMBER : 394. Decode String
+
+class Solution {
+public:
+    int index = 0 ; // globally defind
+
+    string decodeString(string s) {
+        return decode(s);
+    }
+
+private :
+
+    string decode(string& s){
+        string result ;
+        
+        while(index < s.size()){
+            char ch = s[index];
+
+            if(isdigit(ch)){
+                // extract the entire number
+                int k = 0 ;
+                while(index < s.size() && isdigit(s[index])){
+                    k = k * 10 + (s[index] - '0');
+                    index++ ;
+                }
+                index++ ; //skip the [ character
+
+                // Recursively decode the string inside the brackets
+                string decodedString = decode(s);
+
+                // now we need to stored this decoded string into result 
+                // so append kth time this decoded string into result
+                while(k > 0){
+                    result += decodedString ;
+                    k-- ;
+                }
+
+                // now skip the ']; char 
+                
+                index++ ;
+            }
+            else if(ch == ']') break ;
+
+            else{
+                result += ch ;
+                index++ ;
+            }
+        }
+        return result ;
+    }
+};
+
+
+/******************************************************************* ANOTHER SOLUTION USING STACK *********************************************************/
+/
+/////////////////////////////////////////////////// CHECK THAT OUT IN THE RECURSION GFG NOTES DSA IN STACK DIRECTORY \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+
